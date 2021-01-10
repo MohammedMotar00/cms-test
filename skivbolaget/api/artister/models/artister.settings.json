@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artisters",
+  "info": {
+    "name": "artister",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "namn": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": false
+    },
+    "bild": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "bands": {
+      "via": "artisters",
+      "collection": "bands",
+      "dominant": true
+    },
+    "skivbolags": {
+      "collection": "skivbolag",
+      "via": "artisters"
+    },
+    "skivors": {
+      "collection": "skivor",
+      "via": "artisters",
+      "dominant": true
+    },
+    "firstpages": {
+      "via": "artisters",
+      "collection": "first-page"
+    }
+  }
+}

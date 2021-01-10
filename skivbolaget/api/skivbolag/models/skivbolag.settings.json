@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skivbolags",
+  "info": {
+    "name": "skivbolag",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "namn": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "bild": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "artisters": {
+      "via": "skivbolags",
+      "collection": "artister",
+      "dominant": true
+    },
+    "firstpages": {
+      "via": "skivbolags",
+      "collection": "first-page"
+    }
+  }
+}

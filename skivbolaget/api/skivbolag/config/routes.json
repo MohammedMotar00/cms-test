@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/skivbolags",
+      "handler": "skivbolag.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/skivbolags/count",
+      "handler": "skivbolag.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/skivbolags/:id",
+      "handler": "skivbolag.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/skivbolags",
+      "handler": "skivbolag.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/skivbolags/:id",
+      "handler": "skivbolag.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/skivbolags/:id",
+      "handler": "skivbolag.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

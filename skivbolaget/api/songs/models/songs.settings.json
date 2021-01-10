@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "songs",
+  "info": {
+    "name": "songs",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "namn": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "music": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "skivors": {
+      "via": "songs",
+      "collection": "skivor"
+    }
+  }
+}

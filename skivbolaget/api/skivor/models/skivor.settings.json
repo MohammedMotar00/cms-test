@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skivors",
+  "info": {
+    "name": "skivor",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "namn": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "bild": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "songs": {
+      "collection": "songs",
+      "via": "skivors",
+      "dominant": true
+    },
+    "artisters": {
+      "via": "skivors",
+      "collection": "artister"
+    },
+    "bands": {
+      "via": "skivors",
+      "collection": "bands"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "first_pages",
+  "info": {
+    "name": "firstpage",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "logga": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "skivbolags": {
+      "collection": "skivbolag",
+      "via": "firstpages",
+      "dominant": true
+    },
+    "artisters": {
+      "collection": "artister",
+      "via": "firstpages",
+      "dominant": true
+    }
+  }
+}
